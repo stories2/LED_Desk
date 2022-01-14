@@ -1,6 +1,7 @@
 #! /bin/bash
 
 hciconfig hci0 name 'led-controller'
+hciconfig noauth
 hciconfig hci0 down
 hciconfig hci0 up
 service bluetooth restart
