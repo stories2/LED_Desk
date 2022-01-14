@@ -2,7 +2,7 @@ FROM python:3.9.9
 
 RUN apt-get update
 RUN apt-get upgrade
-RUN apt-get install python-pip python-dev
+RUN apt-get install python3-pip python3-dev
 RUN pip3 install RPi.GPIO jupyter
 #RUN apt install python-rpi.gpio -y
 #RUN apt install -y python3-pip python3-dev
