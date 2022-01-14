@@ -7,6 +7,9 @@ PartOf=bluetooth.service
 Type=simple 
 ExecStart=/usr/bin/bt-agent -c NoInputNoOutput -p /etc/bluetooth/pin.conf
 ExecStartPost=/bin/sleep 1 
+ExecStartPost=/usr/bin/bt-agent -c system-alias led-controller
+ExecStartPost=/usr/bin/bt-agent -c discoverable on
+ExecStartPost=/usr/bin/bt-agent -c pairable on
 ExecStartPost=/bin/hciconfig hci0 sspmode 0
 
 [Install] 
