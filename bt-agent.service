@@ -5,8 +5,10 @@ PartOf=bluetooth.service
 
 [Service] 
 Type=simple 
-ExecStart=/usr/bin/bt-agent -c NoInputNoOutput -p /etc/bluetooth/pin.conf
-ExecStartPost=/bin/sleep 1 
+ExecStart=/usr/bin/bt-agent -c power on
+ExecStartPost=/bin/sleep 5 
+ExecStartPost=/usr/bin/bt-agent -c NoInputNoOutput -p /etc/bluetooth/pin.conf
+ExecStartPost=/bin/sleep 1
 ExecStartPost=/usr/bin/bt-agent -c system-alias led-controller
 ExecStartPost=/usr/bin/bt-agent -c discoverable on
 ExecStartPost=/usr/bin/bt-agent -c pairable on
