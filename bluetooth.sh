@@ -11,10 +11,13 @@
 #hciconfig hci0 piscan
 
 bluetoothctl <<EOF
+agent off
 power on
 discoverable on
 pairable on
 agent NoInputNoOutput
 default-agent 
 system-alias led-controller
+pair
+exit
 EOF
