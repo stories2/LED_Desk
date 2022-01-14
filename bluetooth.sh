@@ -13,9 +13,9 @@
 bluetoothctl <<EOF
 agent off
 power on
+system-alias led-controller
 discoverable on
 pairable on
 agent NoInputNoOutput
 default-agent 
-system-alias led-controller
 EOF
