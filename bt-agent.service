@@ -5,7 +5,7 @@ PartOf=bluetooth.service
 
 [Service] 
 Type=simple 
-ExecStart=/usr/bin/bt-agent -c power on
+ExecStart=/usr/bin/hciconfig hci0 up
 ExecStartPost=/bin/sleep 5 
 ExecStartPost=/usr/bin/bt-agent -c NoInputNoOutput -p /etc/bluetooth/pin.conf
 ExecStartPost=/bin/sleep 1
