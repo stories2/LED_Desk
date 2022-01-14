@@ -6,6 +6,7 @@ hciconfig hci0 sspmode 1
 hciconfig hci0 down
 hciconfig hci0 up
 service bluetooth restart
+sleep 10
 #hciconfig hci0 name
 #hciconfig hci0 piscan
 
