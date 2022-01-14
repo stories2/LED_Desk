@@ -9,7 +9,7 @@ chmod 600 /etc/bluetooth/pin.conf
 
 cp bt-agent.service /etc/systemd/system/
 
-cp -o main.conf /etc/bluetooth/
+cp -f main.conf /etc/bluetooth/
 
 systemctl restart bluetooth
 
