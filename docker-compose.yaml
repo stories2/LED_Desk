@@ -8,3 +8,4 @@ services:
       - 8888:8888
     volumes:
       - ./notebook:/notebook
+      - /sys:/sys
