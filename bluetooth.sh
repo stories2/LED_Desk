@@ -18,6 +18,6 @@ pairable on
 agent NoInputNoOutput
 default-agent 
 system-alias led-controller
-pair
-exit
+#pair
+#exit
 EOF
