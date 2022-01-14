@@ -11,7 +11,7 @@ cp bt-agent.service /etc/systemd/system/
 
 cp -o main.conf /etc/bluetooth/
 
-systemctl bluetooth restart
+systemctl restart bluetooth
 
 hciconfig hci0 down
 sleep 1
