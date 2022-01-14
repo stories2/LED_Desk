@@ -9,6 +9,7 @@
 #sleep 10
 #hciconfig hci0 name
 #hciconfig hci0 piscan
+hciconfig hci0 sspmode 0
 
 bluetoothctl <<EOF
 agent off
