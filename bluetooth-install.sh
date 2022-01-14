@@ -9,6 +9,10 @@ chmod 600 /etc/bluetooth/pin.conf
 
 cp bt-agent.service /etc/systemd/system/
 
+cp -o main.conf /etc/bluetooth/
+
+systemctl bluetooth restart
+
 hciconfig hci0 down
 sleep 1
 hciconfig hci0 up
