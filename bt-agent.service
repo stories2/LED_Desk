@@ -1,17 +1,11 @@
-[Unit] 
-Description=Bluetooth Auth Agent 
-After=bluetooth.service
-PartOf=bluetooth.service
+[Unit]
+	Description=Bluetooth Auth Agent
+	After=bluetooth.service
+	PartOf=bluetooth.service
 
-[Service] 
-Type=simple 
-ExecStart=/usr/bin/hciconfig hci0 up
-ExecStartPost=/bin/sleep 5 
-ExecStartPost=/usr/bin/hciconfig noauth
-ExecStartPost=/bin/hciconfig hci0 sspmode 0
-ExecStartPost=/usr/bin/hciconfig hci0 name 'led-controller'
-ExecStartPost=/bin/sleep 1
-ExecStartPost=/usr/bin/hciconfig piscan
-
-[Install] 
-WantedBy=bluetooth.target
+[Service]
+	Type=simple
+	ExecStart=/usr/bin/bt-agent -c NoInputNoOutput
+	ExecStartPost=/bin/sleep 1
+	ExecStartPost=/bin/hciconfig hci0 piscan
+	ExecStartPost=/bin/hciconfig hci0 sspmode 1
