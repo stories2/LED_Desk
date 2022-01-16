@@ -13,4 +13,7 @@ RUN pip3 install RPi.GPIO
 
 EXPOSE 8888
 
+RUN mkdir /notebook
+WORKDIR /notebook
+
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--NotebookApp.token=", "--allow-root"]
