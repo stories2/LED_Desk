@@ -1,4 +1,4 @@
-FROM raspbian/stretch:041518
+FROM python:3.9.9
 
 RUN apt-get update
 RUN apt-get upgrade
