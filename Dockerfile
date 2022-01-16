@@ -7,6 +7,8 @@ RUN pip3 install jupyter
 
 ENV CFLAGS -fcommon
 RUN pip3 install RPi.GPIO 
+
+RUN pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 #RUN apt install python-rpi.gpio -y
 #RUN apt install -y python3-pip python3-dev
 #RUN pip3 install RPi.GPIO jupyter
