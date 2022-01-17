@@ -1,8 +1,26 @@
 version: '3'
 
+networks:
+  lednet:
+    name: infra_led
+    driver: bridge
+    
 services:
+  web:
+    build: ./nginx
+    image: nginx_led
+    container_name: nginx-led-container
+    restart: always
+    depends_on:
+      - test_lab
+    networks:
+      - lednet
+    ports:
+        - 80:80
   test_lab:
     build: ./
+    networks:
+      - lednet
     image: test_lab
     restart: always
     ports:
