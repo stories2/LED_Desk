@@ -25,6 +25,8 @@ services:
     restart: always
     networks:
       - lednet
+    user: root
+    privileged: true
   test_lab:
     build: ./
     networks:
