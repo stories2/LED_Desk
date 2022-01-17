@@ -14,3 +14,4 @@ services:
       - /dev/gpiomem:/dev/gpiomem
         #- /dev/mem:/dev/mem
     user: root
+    privileged: true
