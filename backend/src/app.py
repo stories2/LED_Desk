@@ -13,10 +13,14 @@ pixels = neopixel.NeoPixel(board.D18, NUMPIXELS)
 def hello_world():
     return "<p>Hell World!!</p>"
 
-@app.route("/led", methods=['POST'])
+@app.route("/color", methods=['POST'])
 def change_led_color():
     try:
         payload = request.json
+        if 0 > payload["R"] or 255 < payload["R"] \
+            or 0 > payload["G"] or 255 < payload["G"] \
+                or 0 > payload["B"] or 255 < payload["B"]:
+            raise Exception('Unexpected color range value 0 ~ 255')
         for i in range(NUMPIXELS):
             pixels[i] = (payload["R"], payload["G"], payload["B"])
         pixels.show()
@@ -33,4 +37,3 @@ def change_led_color():
     #     return f'R: {str(content['R'])} G: {str(content['G'])} B: {str(content['B'])}'
     # else:
     #     return 'fail'
-    
