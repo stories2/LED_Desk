@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import RPi.GPIO as GPIO
 import board
 import neopixel
@@ -28,7 +28,7 @@ pixels = neopixel.NeoPixel(board.D18, NUMPIXELS)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hell World!!</p>"
+    return render_template('index.html', static_url_path='')
 
 @app.route("/color", methods=['POST'])
 def change_led_color():
