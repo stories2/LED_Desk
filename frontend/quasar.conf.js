@@ -103,7 +103,9 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
@@ -145,7 +147,7 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Quasar App',
+        name: 'LED Controller',
         short_name: 'Quasar App',
         description: 'A Quasar Framework app',
         display: 'standalone',
