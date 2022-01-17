@@ -18,4 +18,4 @@ EXPOSE 8888
 RUN mkdir /notebook
 WORKDIR /notebook
 
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--NotebookApp.token=", "--allow-root"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--NotebookApp.token=", "--allow-root", "--NotebookApp.base_url=/jupy"]
