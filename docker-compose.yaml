@@ -13,10 +13,18 @@ services:
     restart: always
     depends_on:
       - test_lab
+      - led_flask
     networks:
       - lednet
     ports:
         - 80:80
+  led_flask:
+    build: ./backend
+    image: backend_led
+    container_name: backend-led-container
+    restart: always
+    networks:
+      - lednet
   test_lab:
     build: ./
     networks:
