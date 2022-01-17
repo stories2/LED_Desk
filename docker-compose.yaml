@@ -2,7 +2,7 @@ version: '3'
 
 networks:
   lednet:
-    name: infra_led
+#    name: infra_led
     driver: bridge
     
 services:
