@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 import RPi.GPIO as GPIO
 import board
 import neopixel
@@ -29,6 +29,22 @@ pixels = neopixel.NeoPixel(board.D18, NUMPIXELS)
 @app.route("/")
 def hello_world():
     return render_template('index.html', static_url_path='')
+
+@app.route('/js/<path:path>')
+def send_js(path):
+    return send_from_directory('templates/js', path)
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('templates/css', path)
+
+@app.route('/icons/<path:path>')
+def send_icons(path):
+    return send_from_directory('templates/icons', path)
+
+@app.route('/fonts/<path:path>')
+def send_fonts(path):
+    return send_from_directory('templates/fonts', path)
 
 @app.route("/color", methods=['POST'])
 def change_led_color():
