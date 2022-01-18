@@ -21,7 +21,7 @@ dictConfig({
 })
 
 app = Flask(__name__)
-NUMPIXELS = 30
+NUMPIXELS = 75
 GPIO.setwarnings(True)
 GPIO.setmode(GPIO.BCM) 
 pixels = neopixel.NeoPixel(board.D18, NUMPIXELS)
